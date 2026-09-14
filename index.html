@@ -278,9 +278,9 @@ const AUDIO = {"t1/b01_14/noisy": "data:audio/ogg;base64,T2dnUwACAAAAAAAAAACUE9/
 
 /* ---------- static config ---------- */
 const BOARD_TABS = [
+  { v: "t3", label: "TF-Locoformer × FlowLoco", systems: ["tflocoformer", "flowloco", "ps_flowloco_tfloco"], zeta: 5 },
   { v: "t1", label: "NCSN++M × SGMSE+", systems: ["ncsnppm", "sgmse", "ps_sgmse_ncsnppm"], zeta: 0.5 },
   { v: "t2", label: "CMGAN × FlowMSE", systems: ["cmgan", "flowmse", "ps_flowmse_cmgan"], zeta: 1 },
-  { v: "t3", label: "TF-Locoformer × FlowLoco", systems: ["tflocoformer", "flowloco", "ps_flowloco_tfloco"], zeta: 5 },
 ];
 const SYS_TYPE = {
   noisy: "input", clean: "refsig",
@@ -324,7 +324,7 @@ for (const r of DATA.rows) {
 const clipsOf = snr => DATA.scenarios.filter(s => s.snr_level === snr);
 
 /* ---------- state ---------- */
-let snr = "t1";
+let snr = "t3";
 let clip = clipsOf(snr)[0].scenario;
 let activeSys = "noisy";
 
