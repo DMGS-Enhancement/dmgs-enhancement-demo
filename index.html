@@ -271,7 +271,7 @@ const SYS_TYPE = {
   flowloco: "G", sgmse: "G", flowmse: "G",
   ps_sgmse_ncsnppm: "PS", ps_flowmse_cmgan: "PS", ps_flowloco_tfloco: "PS",
 };
-const FAMILY = { D: "Discriminative", G: "Generative", PS: "Posterior sampling", input: "Unprocessed mixture", refsig: "Ground truth" };
+const FAMILY = { D: "Discriminative", G: "Generative", PS: "DMGS", input: "Unprocessed mixture", refsig: "Ground truth" };
 const TYPE_COLOR = { D: "var(--c-d)", G: "var(--c-g)", PS: "var(--c-ps)", input: "var(--c-neutral)", refsig: "var(--c-ref)" };
 const SYS_NOTE = {
   noisy: "mixture, model input", clean: "ground truth",
@@ -284,8 +284,8 @@ const SYS_NOTE = {
 const SHORT = {
   noisy: "Noisy input", clean: "Clean reference", tflocoformer: "TF-Locoformer", cmgan: "CMGAN",
   ncsnppm: "NCSN++M", flowloco: "FlowLoco", sgmse: "SGMSE+", flowmse: "FlowMSE",
-  ps_sgmse_ncsnppm: "PS · SGMSE+ × NCSN++M", ps_flowmse_cmgan: "PS · FlowMSE × CMGAN",
-  ps_flowloco_tfloco: "PS · FlowLoco × TF-Loco",
+  ps_sgmse_ncsnppm: "DMGS · SGMSE+ × NCSN++M", ps_flowmse_cmgan: "DMGS · FlowMSE × CMGAN",
+  ps_flowloco_tfloco: "DMGS · FlowLoco × TF-Loco",
 };
 const METRICS = [
   { key: "pesq_wb", name: "PESQ", dir: 1, fmt: v => v.toFixed(2), range: "1–4.5" },
@@ -296,7 +296,7 @@ const METRICS = [
 const colorOf = s => TYPE_COLOR[SYS_TYPE[s]];
 const groupsFor = tab => [
   { name: "Reference", systems: ["noisy", "clean"] },
-  { name: `${tab.label} · PS at ζ = ${tab.zeta}`, systems: tab.systems },
+  { name: `${tab.label} · DMGS at ζ = ${tab.zeta}`, systems: tab.systems },
 ];
 
 /* index rows: bySnr[snr][scenario][system] = row */
