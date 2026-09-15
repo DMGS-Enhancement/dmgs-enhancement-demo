@@ -223,16 +223,7 @@
   <header>
     <p class="eyebrow">Listening demo · speech enhancement</p>
     <h1>Training-Free Combination of Discriminative and Generative Speech Enhancement via Posterior Sampling</h1>
-    <p class="lede">
-      Discriminative enhancers score well on intrusive metrics but leave residual artifacts; generative
-      (diffusion / flow) enhancers sound natural but can hallucinate. This study runs both families on the
-      same data, then <strong>guides the generative sampler toward the discriminative output</strong>
-      (DPS-style posterior sampling) — no retraining of either model.
-      Each tab below is one discriminative × generative pair: listen to both parents and the
-      posterior-sampling combination on clips where the parents genuinely disagree.
-    </p>
-    <div class="legend" id="legend"></div>
-  </header>
+      </header>
 
   <section>
     <h2>Listening room</h2>
@@ -327,11 +318,6 @@ const clipsOf = snr => DATA.scenarios.filter(s => s.snr_level === snr);
 let snr = "t3";
 let clip = clipsOf(snr)[0].scenario;
 let activeSys = "noisy";
-
-/* ---------- legend ---------- */
-document.getElementById("legend").innerHTML = ["D", "G", "PS"].map(t =>
-  `<span class="lg"><span class="sw" style="background:${TYPE_COLOR[t]}"></span>${FAMILY[t]}</span>`).join("") +
-  `<span class="lg"><span class="sw" style="background:var(--c-neutral)"></span>Noisy input</span>`;
 
 /* ---------- audio engine ---------- */
 const player = new Audio();
