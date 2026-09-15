@@ -222,7 +222,15 @@
 <div class="wrap">
   <header>
     <p class="eyebrow">Listening demo · speech enhancement</p>
-    <h1>Training-Free Combination of Discriminative and Generative Speech Enhancement via Posterior Sampling</h1>
+    <h1>Training-Free Combination of Discriminative and Generative Speech Enhancement via Discriminative-Model-Guided Sampling</h1>
+    <p class="lede">
+      Discriminative enhancers excel at signal fidelity and noise suppression; generative
+      (flow-matching / score-based) enhancers produce natural speech but can hallucinate.
+      <strong>DMGS</strong> combines two independently trained models at inference time: the
+      discriminative estimate anchors the generative sampler, and a single guidance weight
+      ζ sets the balance — no joint training, no modification of either model. Each tab below
+      pairs one discriminative and one generative model; listen to both and their DMGS combination.
+    </p>
       </header>
 
   <section>
