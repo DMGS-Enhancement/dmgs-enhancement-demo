@@ -8,4 +8,4 @@ Speech Enhancement via Posterior Sampling*.
 combinations (guidance weight ζ = 1). Per-clip PESQ / ESTOI / SI-SDR / WER,
 mean scores per SNR level, and position-preserving A/B playback.
 
-**Live page:** https://aviad3189.github.io/ps-enhancement-demo/
+**Live page:** https://dmgs-enhancement.github.io/ps-enhancement-demo/
